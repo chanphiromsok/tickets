@@ -4,18 +4,25 @@
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `tickets` to your list of dependencies in `mix.exs`:
+
 
 ```elixir
-def deps do
-  [
-    {:tickets, "~> 0.1.0"}
-  ]
-end
+defp deps do
+    [
+      {:broadway, "~> 1.0"},
+      {:broadway_rabbitmq, "~> 0.7.2"},
+      {:amqp, "~> 3.1"},
+      {:remix, "~> 0.0.2"},
+      {:lager, github: "basho/lager"}
+    ]
+  end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/tickets>.
+require rabbitmq
 
+
+```elixir
+iex -S mix
+
+send_messages.(500)
+```
